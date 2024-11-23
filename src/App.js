@@ -179,7 +179,8 @@ function App() {
 
         {/* Transactions Section */}
         <div className="mt-10 space-y-6 ">
-          {transactions.length > 0 &&
+          {transactions &&
+            transactions.length > 0 &&
             transactions.map((transaction, ind) => (
               <div
                 // SELECT A UNQUE KEY
