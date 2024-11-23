@@ -107,9 +107,10 @@ function App() {
     }
   };
 
-  let balance = 0;
-
-  transactions.map((transaction) => (balance = balance + transaction.amount));
+  let balance = transactions.reduce(
+    (acc, transaction) => acc + transaction.amount,
+    0
+  );
 
   balance = balance.toFixed(2);
 
