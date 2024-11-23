@@ -106,13 +106,12 @@ function App() {
       setLoadingDel(false);
     }
   };
-  let balance = 0;
-  if (transactions.length > 0) {
-    balance = transactions.reduce(
-      (acc, transaction) => acc + transaction.amount,
-      0
-    );
-  }
+
+  let balance = (transactions || []).reduce(
+    (acc, transaction) => acc + transaction.amount,
+    0
+  );
+
   balance = balance.toFixed(2);
 
   return (
